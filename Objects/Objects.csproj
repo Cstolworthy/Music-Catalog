@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D04128DA-01D6-4C0A-B8A0-6638FF944313}</ProjectGuid>
+    <ProjectGuid>{3AEFE433-F9E3-468F-8C22-02BA203D489A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DataAccess</RootNamespace>
-    <AssemblyName>DataAccess</AssemblyName>
+    <RootNamespace>Objects</RootNamespace>
+    <AssemblyName>Objects</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -34,9 +34,6 @@
     <Reference Include="MongoDB.Bson">
       <HintPath>..\Third Party Bin\Mongo\MongoDB.Bson.dll</HintPath>
     </Reference>
-    <Reference Include="MongoDB.Driver">
-      <HintPath>..\Third Party Bin\Mongo\MongoDB.Driver.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,17 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DatabaseAccess.cs" />
+    <Compile Include="Database\MusicSheet.cs" />
+    <Compile Include="Database\DatabaseConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{C425FB4B-DD9E-4698-862A-7D4CDC20A391}</Project>
       <Name>Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Objects\Objects.csproj">
-      <Project>{3AEFE433-F9E3-468F-8C22-02BA203D489A}</Project>
-      <Name>Objects</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
