@@ -2,10 +2,10 @@
 
 namespace Interfaces.Database
 {
-    public interface ICollectionBase
+    public abstract class CollectionBase
     {
-        BsonObjectId Id { get; set; }
-        string FriendlyId { get; set; }
-        CollectionName Collection { get; set; }
+        public abstract BsonObjectId Id { get; set; }
+        public abstract string FriendlyId { get; set; }
+        public static CollectionName Collection { get; set; }
     }
 }

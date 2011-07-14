@@ -5,16 +5,11 @@ using MongoDB.Bson;
 
 namespace Objects.Database
 {
-    public class MusicSheet : ICollectionBase
+    public class MusicSheet : CollectionBase
     {
-        public BsonObjectId Id
-        {
-            get;
-            set;
-        }
-
-        public string FriendlyId { get; set; }
-        public CollectionName Collection { get; set; }
+        public new static CollectionName Collection { get { return CollectionName.SheetMusic; } }
         public string Title { get; set; }
+        public override BsonObjectId Id { get; set; }
+        public override string FriendlyId { get; set; }
     }
 }

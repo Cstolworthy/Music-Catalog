@@ -12,12 +12,6 @@ namespace Website.Controllers
         {
             ViewData["Message"] = "Welcome to ASP.NET MVC!";
 
-//            DatabaseConfiguration config = new DatabaseConfiguration("mongodb://MusicCatalog:Password@flame.mongohq.com:27053/"){DatabaseName = "Test"};
-
-//            DatabaseAccess da = new DatabaseAccess(config);
-
-//            var result = da.GetSingle<MusicSheet>(CollectionName.SheetMusic,"blah");
-
             return View();
         }
 

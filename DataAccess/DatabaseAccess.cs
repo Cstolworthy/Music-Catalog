@@ -1,44 +1,68 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using Interfaces;
+using System.Reflection;
 using Interfaces.Database;
-using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Builders;
-using Objects;
 using Objects.Database;
-
 
 namespace DataAccess
 {
-    public class DatabaseAccess
+    public class DatabaseAccess : IDatabaseAccess
     {
-        public DatabaseConfiguration Configuration { get; set; }
+        public IDatabaseConfiguration Configuration { get; set; }
 
         public DatabaseAccess(DatabaseConfiguration config)
         {
             Configuration = config;
         }
 
-        public void Save<T>(T objectToSave) where T : ICollectionBase
+        private static string GetCollectionNameFromType(Type objectType)
         {
 
+            var field = objectType.GetProperty("Collection", BindingFlags.Public | BindingFlags.Static);
+
+            if (field != null)
+            {
+                return (string)field.GetValue(null, null);
+            }
+
+            return string.Empty;
+        }
+
+
+        public void SaveOne<T>(T objectToSave) where T : CollectionBase
+        {
             var server = MongoServer.Create(Configuration.Server);
 
             MongoDatabase db = server.GetDatabase(Configuration.DatabaseName);
 
-            var collection = db.GetCollection<T>(objectToSave.Collection.ToString());
+            var collectionName = GetCollectionNameFromType(typeof(T));
+
+            var collection = db.GetCollection<T>(collectionName);
 
             collection.Save(objectToSave);
         }
 
-        public T GetSingle<T>(CollectionName name, string friendlyId) where T : ICollectionBase
+
+        public void SaveMany<T>(List<T> objectsToSave) where T : CollectionBase
+        {
+            foreach (var t in objectsToSave)
+            {
+                SaveOne(t);
+            }
+        }
+
+        public T GetSingle<T>(string friendlyId) where T : CollectionBase
         {
             var server = MongoServer.Create(Configuration.Server);
 
             MongoDatabase db = server.GetDatabase(Configuration.DatabaseName);
 
-            var collection = db.GetCollection<T>(name.ToString());
+            var collectionName = GetCollectionNameFromType(typeof(T));
+
+            var collection = db.GetCollection<T>(collectionName);
 
             var query = Query.EQ("FriendlyId", friendlyId);
 
@@ -47,17 +71,21 @@ namespace DataAccess
             return objects.FirstOrDefault();
         }
 
-        public List<T> GetAll<T>(CollectionName name) where T : ICollectionBase
+        public List<T> GetAll<T>() where T : CollectionBase
         {
             var server = MongoServer.Create(Configuration.Server);
 
             MongoDatabase db = server.GetDatabase(Configuration.DatabaseName);
 
-            var collection = db.GetCollection<T>(name.ToString());
+            var collectionName = GetCollectionNameFromType(typeof(T));
+
+            var collection = db.GetCollection<T>(collectionName.ToString());
 
             var objects = collection.FindAll();
 
             return objects.ToList();
         }
+
+
     }
 }

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\MusicSection.cs" />
     <Compile Include="Database\MusicSheet.cs" />
     <Compile Include="Database\DatabaseConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

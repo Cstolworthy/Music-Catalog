@@ -1,6 +1,8 @@
-﻿namespace Objects.Database
+﻿using Interfaces.Database;
+
+namespace Objects.Database
 {
-    public class DatabaseConfiguration
+    public class DatabaseConfiguration : IDatabaseConfiguration
     {
         public DatabaseConfiguration(string connection)
         {
