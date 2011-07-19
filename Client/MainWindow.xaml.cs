@@ -23,5 +23,12 @@ namespace Client
         {
             InitializeComponent();
         }
+
+        protected override void OnInitialized(EventArgs e)
+        {
+            var cli = new MusicSheetDataService.MusicSheetDataServiceClient();
+            this.DataContext = cli.GetMusicSheet("Beethoven's Third");
+            base.OnInitialized(e);
+        }
     }
 }

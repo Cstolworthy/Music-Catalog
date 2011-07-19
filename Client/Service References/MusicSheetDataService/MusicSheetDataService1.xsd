@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Objects.Database" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Objects.Database" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:49906/MusicSheetDataService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Interfaces.Database" />
+  <xs:complexType name="MusicSheet">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/Interfaces.Database" base="q1:CollectionBase">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Composer" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Instruments" nillable="true" type="tns:ArrayOfMusicSection" />
+          <xs:element minOccurs="0" name="Tags" nillable="true" type="tns:ArrayOfTag" />
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MusicSheet" nillable="true" type="tns:MusicSheet" />
+  <xs:complexType name="ArrayOfMusicSection">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MusicSection" nillable="true" type="tns:MusicSection" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMusicSection" nillable="true" type="tns:ArrayOfMusicSection" />
+  <xs:complexType name="MusicSection">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q2="http://schemas.datacontract.org/2004/07/Interfaces.Database" base="q2:CollectionBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="MusicSection" nillable="true" type="tns:MusicSection" />
+  <xs:complexType name="ArrayOfTag">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Tag" nillable="true" type="tns:Tag" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTag" nillable="true" type="tns:ArrayOfTag" />
+  <xs:complexType name="Tag">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q3="http://schemas.datacontract.org/2004/07/Interfaces.Database" base="q3:CollectionBase">
+        <xs:sequence />
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Tag" nillable="true" type="tns:Tag" />
+</xs:schema>

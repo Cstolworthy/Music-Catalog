@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Interfaces;
 using Interfaces.Database;
 using MongoDB.Driver;
 using MongoDB.Driver.Builders;
@@ -25,7 +26,7 @@ namespace DataAccess
 
             if (field != null)
             {
-                return (string)field.GetValue(null, null);
+                return ((CollectionName)field.GetValue(null, null)).ToString();
             }
 
             return string.Empty;

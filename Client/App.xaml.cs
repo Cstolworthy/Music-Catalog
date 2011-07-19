@@ -12,5 +12,6 @@ namespace Client
     /// </summary>
     public partial class App : Application
     {
+        
     }
 }

@@ -6,6 +6,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website.Tests", "..\Website.Tests\Website.Tests.csproj", "{05B47E9F-651A-4009-A67E-7324258F7C1E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "..\Client\Client.csproj", "{DD747430-CD26-4F16-A7A4-B1C3A50CA59D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D635D0DD-2ACA-49F8-B8F3-88B12A7D47F2} = {D635D0DD-2ACA-49F8-B8F3-88B12A7D47F2}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "..\DataAccess\DataAccess.csproj", "{D04128DA-01D6-4C0A-B8A0-6638FF944313}"
 EndProject
@@ -14,6 +17,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Objects", "..\Objects\Objects.csproj", "{3AEFE433-F9E3-468F-8C22-02BA203D489A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "..\Interfaces\Interfaces.csproj", "{C425FB4B-DD9E-4698-862A-7D4CDC20A391}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Webservices", "..\Webservices\Webservices.csproj", "{D635D0DD-2ACA-49F8-B8F3-88B12A7D47F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -95,6 +100,16 @@ Global
 		{C425FB4B-DD9E-4698-862A-7D4CDC20A391}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{C425FB4B-DD9E-4698-862A-7D4CDC20A391}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C425FB4B-DD9E-4698-862A-7D4CDC20A391}.Release|x86.ActiveCfg = Release|Any CPU
+		{D635D0DD-2ACA-49F8-B8F3-88B12A7D47F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D635D0DD-2ACA-49F8-B8F3-88B12A7D47F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D635D0DD-2ACA-49F8-B8F3-88B12A7D47F2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D635D0DD-2ACA-49F8-B8F3-88B12A7D47F2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D635D0DD-2ACA-49F8-B8F3-88B12A7D47F2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D635D0DD-2ACA-49F8-B8F3-88B12A7D47F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D635D0DD-2ACA-49F8-B8F3-88B12A7D47F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D635D0DD-2ACA-49F8-B8F3-88B12A7D47F2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D635D0DD-2ACA-49F8-B8F3-88B12A7D47F2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D635D0DD-2ACA-49F8-B8F3-88B12A7D47F2}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

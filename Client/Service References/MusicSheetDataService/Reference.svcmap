@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2258a40a-fa48-47be-9537-7acfbf1a54e4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:49906/MusicSheetDataService.svc?wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MusicSheetDataService.xsd" MetadataType="Schema" ID="1a813b6e-65dc-4fa5-98bf-1dbce5b31b39" SourceId="1" SourceUrl="http://localhost:49906/MusicSheetDataService.svc?xsd=xsd4" />
+    <MetadataFile FileName="MusicSheetDataService1.xsd" MetadataType="Schema" ID="b793b3c3-5183-48c0-8377-8bae85d65a4a" SourceId="1" SourceUrl="http://localhost:49906/MusicSheetDataService.svc?xsd=xsd2" />
+    <MetadataFile FileName="MusicSheetDataService2.xsd" MetadataType="Schema" ID="12219ab6-e291-4215-9e45-dcd5394dd845" SourceId="1" SourceUrl="http://localhost:49906/MusicSheetDataService.svc?xsd=xsd3" />
+    <MetadataFile FileName="MusicSheetDataService3.xsd" MetadataType="Schema" ID="29b66ab0-6712-4ba1-8df8-ad8ea5f3f6b9" SourceId="1" SourceUrl="http://localhost:49906/MusicSheetDataService.svc?xsd=xsd0" />
+    <MetadataFile FileName="MusicSheetDataService4.xsd" MetadataType="Schema" ID="17b74969-6293-4562-ab78-dc8ce354ff6d" SourceId="1" SourceUrl="http://localhost:49906/MusicSheetDataService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MusicSheetDataService.wsdl" MetadataType="Wsdl" ID="3469c77f-904d-4e19-bdb6-f07d940986da" SourceId="1" SourceUrl="http://localhost:49906/MusicSheetDataService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
